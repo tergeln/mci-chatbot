@@ -1,0 +1,32 @@
+{
+  "document_id": "company-overview-001",
+  "doc_type": "company",
+  "title": "Magic Code AI — компанийн танилцуулгын ноорог",
+  "status": "draft",
+  "version": "0.1.0",
+  "valid_from": null,
+  "valid_to": null,
+  "lang": "mn",
+  "course_id": null,
+  "source_name": "Magic Code AI — ажлын ноорог (баталгаажаагүй)",
+  "sections": [
+    {
+      "section_id": "company-overview-001-s01",
+      "heading": "Үйл ажиллагааны чиглэл",
+      "page": null,
+      "content": "Magic Code AI платформд программ хангамжийн үйлчилгээ болон IT сургалтын мэдээлэл танилцуулахаар төлөвлөж байна."
+    },
+    {
+      "section_id": "company-overview-001-s02",
+      "heading": "Хэрэглэгчид үзүүлэх дэмжлэг",
+      "page": null,
+      "content": "Чатбот нь платформын мэдээллийн асуултад эх сурвалжид тулгуурлан хариулж, сургалтын бүртгэл болон үйлчилгээний хүсэлтийн явцыг чиглүүлэхээр төлөвлөгдсөн."
+    },
+    {
+      "section_id": "company-overview-001-s03",
+      "heading": "Холбоо барих",
+      "page": null,
+      "content": "Албан ёсны утас, имэйл, хаяг, ажлын цаг хараахан баталгаажаагүй. Хэрэглэгчид зохиомол мэдээлэл өгөхгүй."
+    }
+  ]
+}

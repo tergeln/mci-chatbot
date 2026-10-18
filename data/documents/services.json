@@ -1,0 +1,38 @@
+{
+  "document_id": "service-overview-001",
+  "doc_type": "service",
+  "title": "Программ хангамжийн үйлчилгээний ноорог",
+  "status": "draft",
+  "version": "0.1.0",
+  "valid_from": null,
+  "valid_to": null,
+  "lang": "mn",
+  "course_id": null,
+  "source_name": "Magic Code AI — ажлын ноорог (баталгаажаагүй)",
+  "sections": [
+    {
+      "section_id": "service-overview-001-s01",
+      "heading": "Вэб хөгжүүлэлт",
+      "page": null,
+      "content": "Бизнесийн вебсайт хөгжүүлэх үйлчилгээний мэдээллийг платформд байрлуулах төлөвлөгөөтэй."
+    },
+    {
+      "section_id": "service-overview-001-s02",
+      "heading": "Апп хөгжүүлэлт",
+      "page": null,
+      "content": "Мобайл апп хөгжүүлэлтийн үйлчилгээний дэлгэрэнгүй хамрах хүрээ, платформ, үнийн санал баталгаажаагүй."
+    },
+    {
+      "section_id": "service-overview-001-s03",
+      "heading": "Үйлчилгээний хүсэлт",
+      "page": null,
+      "content": "Хэрэглэгч төслийн зорилго, хэрэгцээ, холбоо барих мэдээллээ оруулж хүсэлт илгээх үйл явцыг төлөвлөсөн. Бодит хүсэлт үүсгэх нь backend API баталгаажсаны дараа хэрэгжинэ."
+    },
+    {
+      "section_id": "service-overview-001-s04",
+      "heading": "Үнэ ба хугацаа",
+      "page": null,
+      "content": "Үнийн дүн болон ажлын хугацаа баталгаажаагүй тул chatbot тоо зохиохгүй; мэргэжилтэнд шилжүүлнэ."
+    }
+  ]
+}

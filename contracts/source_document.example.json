@@ -1,0 +1,19 @@
+{
+  "source_id": "course-123",
+  "doc_type": "course",
+  "version": 3,
+  "status": "approved",
+  "updated_at": "2026-10-18T00:00:00Z",
+  "valid_from": null,
+  "valid_to": null,
+  "lang": "mn",
+  "source_name": "backend:courses",
+  "sections": [
+    {
+      "section_id": "overview",
+      "heading": "Танилцуулга",
+      "content": "Баталгаажсан мэдээлэл энд орно.",
+      "page": null
+    }
+  ]
+}

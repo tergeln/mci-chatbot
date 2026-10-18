@@ -1,0 +1,22 @@
+[
+  {
+    "document_id": "test-course-python-001",
+    "doc_type": "course",
+    "title": "ЗӨВХӨН ТЕСТ — Python анхан шат",
+    "status": "test_only",
+    "version": "0.1.0",
+    "valid_from": null,
+    "valid_to": null,
+    "lang": "mn",
+    "course_id": "test-python-001",
+    "source_name": "Magic Code AI — ажлын ноорог (баталгаажаагүй)",
+    "sections": [
+      {
+        "section_id": "test-course-python-001-s01",
+        "heading": "Туршилтын сургалт",
+        "page": null,
+        "content": "Энэ нь жишээ өгөгдөл. Python анхан шатны сургалтын туршилтын үнэ 123456 төгрөг гэж зориудаар оруулсан. Бодит компанийн үнэ биш."
+      }
+    ]
+  }
+]

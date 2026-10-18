@@ -1,0 +1,32 @@
+{
+  "document_id": "policy-overview-001",
+  "doc_type": "policy",
+  "title": "Мэдээлэл ба бүртгэлийн дүрмийн ноорог",
+  "status": "draft",
+  "version": "0.1.0",
+  "valid_from": null,
+  "valid_to": null,
+  "lang": "mn",
+  "course_id": null,
+  "source_name": "Magic Code AI — ажлын ноорог (баталгаажаагүй)",
+  "sections": [
+    {
+      "section_id": "policy-overview-001-s01",
+      "heading": "Баталгаажаагүй мэдээлэл",
+      "page": null,
+      "content": "Үнэ, хуваарь, буцаалт, гэрээний нөхцөлийг баталгаагүй эх сурвалжаас тогтоохгүй."
+    },
+    {
+      "section_id": "policy-overview-001-s02",
+      "heading": "Хувийн мэдээлэл",
+      "page": null,
+      "content": "Хэрэглэгчийн утас, имэйл зэрэг мэдээллийг логт ил гаргахгүй; бүртгэлийн зорилго, хадгалалтын бодлогыг компанийн эрх бүхий этгээд батална."
+    },
+    {
+      "section_id": "policy-overview-001-s03",
+      "heading": "Операторт шилжүүлэх",
+      "page": null,
+      "content": "Мэдээлэл олдохгүй эсвэл хэрэглэгч оператор хүсвэл ажилтанд шилжүүлэх урсгалыг төлөвлөсөн."
+    }
+  ]
+}
