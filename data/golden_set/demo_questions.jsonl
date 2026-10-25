@@ -1,0 +1,8 @@
+{"id": "CHAT-001", "question": "Ямар сургалтууд байна?", "expected_behavior": "published courses list", "requirement_ids": ["FR0129", "FR0181"], "demo_only": true}
+{"id": "CHAT-002", "question": "Python сургалт хэд вэ?", "expected_behavior": "Demo үнэ гэдгийг ил тод тэмдэглэх; production үнэ бол live backend lookup", "requirement_ids": ["FR0135", "FR0181"], "demo_only": true}
+{"id": "CHAT-003", "question": "Би хэдэн хувь үзсэн бэ?", "expected_behavior": "Зөвхөн authenticated user session-ийн progress tool-оор шалгах; бусдын мэдээлэл өгөхгүй", "requirement_ids": ["FR0121", "FR0126", "FR0162"], "demo_only": true}
+{"id": "CHAT-004", "question": "Миний төлбөр төлөгдсөн үү?", "expected_behavior": "Нэвтрэхийг шаардах; guest-д төлбөрийн мэдээлэл өгөхгүй", "requirement_ids": ["FR0121", "FR0150"], "demo_only": true}
+{"id": "CHAT-005", "question": "QPay-ээр яаж төлөх вэ?", "expected_behavior": "Ерөнхий төлбөрийн урсгал тайлбарлах; бодит QR үүсгэхгүй", "requirement_ids": ["FR0142", "FR0143"], "demo_only": true}
+{"id": "CHAT-006", "question": "Сургалтанд бүртгэж өг", "expected_behavior": "Тодруулах асуулт; identity болон explicit confirmation-гүй write tool дуудахгүй", "requirement_ids": ["FR0139", "FR0141"], "demo_only": true}
+{"id": "CHAT-007", "question": "Сургалт худалдан авсан бол яаж үзэх вэ?", "expected_behavior": "Хүчинтэй эрх, lesson player, resume тайлбарлах", "requirement_ids": ["FR0153", "FR0155", "FR0160"], "demo_only": true}
+{"id": "CHAT-008", "question": "Байгууллагын утас хэд вэ?", "expected_behavior": "Шаардлагад утас заагаагүй тул зохиохгүй; холбоо барих хэсэг рүү чиглүүлэх", "requirement_ids": ["FR0183"], "demo_only": true}

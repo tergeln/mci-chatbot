@@ -1,32 +1,50 @@
 {
-  "document_id": "company-overview-001",
+  "document_id": "demo-company",
   "doc_type": "company",
-  "title": "Magic Code AI — компанийн танилцуулгын ноорог",
-  "status": "draft",
-  "version": "0.1.0",
+  "title": "Demo платформын ерөнхий мэдээлэл",
+  "status": "test_only",
+  "version": "0.3.1-demo",
   "valid_from": null,
   "valid_to": null,
   "lang": "mn",
   "course_id": null,
-  "source_name": "Magic Code AI — ажлын ноорог (баталгаажаагүй)",
+  "source_name": "Product requirements FR0100–FR0199; зохиомол demo өгөгдөл",
+  "demo_only": true,
   "sections": [
     {
-      "section_id": "company-overview-001-s01",
-      "heading": "Үйл ажиллагааны чиглэл",
+      "section_id": "demo-company-s01",
+      "heading": "Танилцуулга",
       "page": null,
-      "content": "Magic Code AI платформд программ хангамжийн үйлчилгээ болон IT сургалтын мэдээлэл танилцуулахаар төлөвлөж байна."
+      "content": "Энэ нь урьдчилан бэлтгэсэн видео сургалт, мэдээ, бүтээгдэхүүн, чат туслах бүхий вэб платформын туршилтын орчин юм. Байгууллагын албан ёсны танилцуулга биш.",
+      "requirement_ids": [
+        "FR0100",
+        "FR0101",
+        "FR0102"
+      ]
     },
     {
-      "section_id": "company-overview-001-s02",
-      "heading": "Хэрэглэгчид үзүүлэх дэмжлэг",
+      "section_id": "demo-company-s02",
+      "heading": "Хэрэглэгчийн эрх",
       "page": null,
-      "content": "Чатбот нь платформын мэдээллийн асуултад эх сурвалжид тулгуурлан хариулж, сургалтын бүртгэл болон үйлчилгээний хүсэлтийн явцыг чиглүүлэхээр төлөвлөгдсөн."
+      "content": "Зочин каталог, мэдээ, бүтээгдэхүүн үзэж чат ашиглана. Суралцагч худалдан авсан сургалтаа үзэж, явцаа хянана. Админ агуулга, хэрэглэгч, төлбөр, захиалгыг удирдана.",
+      "requirement_ids": [
+        "FR0109",
+        "FR0121",
+        "FR0122"
+      ]
     },
     {
-      "section_id": "company-overview-001-s03",
-      "heading": "Холбоо барих",
+      "section_id": "demo-company-s03",
+      "heading": "Тохиргоо",
       "page": null,
-      "content": "Албан ёсны утас, имэйл, хаяг, ажлын цаг хараахан баталгаажаагүй. Хэрэглэгчид зохиомол мэдээлэл өгөхгүй."
+      "content": "Монгол, англи хэл; гэрэлтэй, бараан горим; loading, empty, success, error төлөв; дахин оролдох болон 404 хуудсыг demo-д үзүүлнэ.",
+      "requirement_ids": [
+        "FR0104",
+        "FR0105",
+        "FR0106",
+        "FR0107",
+        "FR0108"
+      ]
     }
   ]
 }

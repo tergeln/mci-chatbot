@@ -1,0 +1,21 @@
+[
+  {
+    "id": "DEMO-PAY-001",
+    "user_id": "DEMO-USER-001",
+    "course_id": "DEMO-COURSE-001",
+    "amount_mnt": 89000,
+    "method": "qpay",
+    "status": "paid",
+    "provider_reference": "FAKE-REFERENCE-NOT-A-REAL-PAYMENT",
+    "demo_only": true
+  },
+  {
+    "id": "DEMO-PAY-002",
+    "user_id": "DEMO-USER-001",
+    "course_id": "DEMO-COURSE-002",
+    "amount_mnt": 129000,
+    "method": "bank_transfer",
+    "status": "pending",
+    "demo_only": true
+  }
+]

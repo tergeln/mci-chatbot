@@ -1,32 +1,49 @@
 {
-  "document_id": "policy-overview-001",
-  "doc_type": "policy",
-  "title": "Мэдээлэл ба бүртгэлийн дүрмийн ноорог",
-  "status": "draft",
-  "version": "0.1.0",
+  "document_id": "demo-policies",
+  "doc_type": "policies",
+  "title": "Demo дүрэм ба хандалтын нөхцөл",
+  "status": "test_only",
+  "version": "0.3.1-demo",
   "valid_from": null,
   "valid_to": null,
   "lang": "mn",
   "course_id": null,
-  "source_name": "Magic Code AI — ажлын ноорог (баталгаажаагүй)",
+  "source_name": "Product requirements FR0100–FR0199; зохиомол demo өгөгдөл",
+  "demo_only": true,
   "sections": [
     {
-      "section_id": "policy-overview-001-s01",
-      "heading": "Баталгаажаагүй мэдээлэл",
+      "section_id": "demo-policies-s01",
+      "heading": "Хандалтын эрх",
       "page": null,
-      "content": "Үнэ, хуваарь, буцаалт, гэрээний нөхцөлийг баталгаагүй эх сурвалжаас тогтоохгүй."
+      "content": "Зочин зөвхөн нийтийн мэдээлэлд хандана. Суралцагч зөвхөн өөрийн мэдээлэл, төлбөр, сургалтын эрхийг харна. Админы үйлдэл бүрд сервер дээр эрх шалгана.",
+      "requirement_ids": [
+        "FR0119",
+        "FR0121",
+        "FR0122",
+        "FR0155"
+      ]
     },
     {
-      "section_id": "policy-overview-001-s02",
-      "heading": "Хувийн мэдээлэл",
+      "section_id": "demo-policies-s02",
+      "heading": "Төлбөр ба буцаалт",
       "page": null,
-      "content": "Хэрэглэгчийн утас, имэйл зэрэг мэдээллийг логт ил гаргахгүй; бүртгэлийн зорилго, хадгалалтын бодлогыг компанийн эрх бүхий этгээд батална."
+      "content": "Төлбөр pending, paid, failed, expired төлөвтэй. Давтан баталгаажуулалтаар давхар худалдан авалт үүсгэхгүй. Буцаалтын хүсэлтийг бүртгэж админ шийдвэрлэнэ. Буцаалтын бодит хугацаа, хувь шаардлагад заагаагүй.",
+      "requirement_ids": [
+        "FR0145",
+        "FR0147",
+        "FR0151",
+        "FR0152"
+      ]
     },
     {
-      "section_id": "policy-overview-001-s03",
-      "heading": "Операторт шилжүүлэх",
+      "section_id": "demo-policies-s03",
+      "heading": "Сургалтын эрх",
       "page": null,
-      "content": "Мэдээлэл олдохгүй эсвэл хэрэглэгч оператор хүсвэл ажилтанд шилжүүлэх урсгалыг төлөвлөсөн."
+      "content": "Эрхийн хугацаа дуусвал төлбөртэй хичээлд хандах боломж хаагдана. Эрх олголт, сунгалт, түдгэлзүүлэлтийг эрх бүхий backend удирдана.",
+      "requirement_ids": [
+        "FR0166",
+        "FR0191"
+      ]
     }
   ]
 }

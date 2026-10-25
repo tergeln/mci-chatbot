@@ -1,0 +1,20 @@
+[
+  {
+    "id": "DEMO-USER-001",
+    "role": "learner",
+    "name": "Туршилтын суралцагч",
+    "email": "learner@example.com",
+    "email_verified": true,
+    "account_status": "active",
+    "demo_only": true
+  },
+  {
+    "id": "DEMO-ADMIN-001",
+    "role": "admin",
+    "name": "Туршилтын админ",
+    "email": "admin@example.com",
+    "email_verified": true,
+    "account_status": "active",
+    "demo_only": true
+  }
+]
