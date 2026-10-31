@@ -1,25 +1,24 @@
-# Local secrets and credentials
+# нууц түлхүүрүүд
 .env
 .env.*
 !.env.example
-!.env.*.example
-**/secrets/**
-*.pem
-*.key
-*.p12
-*.pfx
 
-# Private documents and generated output
-data/source_docs/private/
-data/generated/
-data/documents/private/
-data/private/
-
-# Python and local artifacts
+# Python
 .venv/
 __pycache__/
 *.pyc
-.pytest_cache/
-*.sqlite3
-*.log
+
+# Node
+node_modules/
+dist/
+.next/
+
+# Vercel
+.vercel/
+
+# дотоод баримтууд (ingest-ийн эх файлууд)
+knowledge/*
+!knowledge/.gitkeep
+
+# OS
 .DS_Store
