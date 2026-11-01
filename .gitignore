@@ -16,9 +16,7 @@ dist/
 # Vercel
 .vercel/
 
-# дотоод баримтууд (ingest-ийн эх файлууд)
-knowledge/*
-!knowledge/.gitkeep
+
 
 # OS
 .DS_Store
