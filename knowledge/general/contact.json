@@ -7,20 +7,18 @@
   "approval_status": "needs_company_review",
   "source_basis": "User-provided system analysis, workshop image and confirmed chat requirements; DOCX not included",
   "website": "https://mci.mn",
-  "contact_page_url": null,
-  "phone": null,
-  "email": null,
+  "contact_page_url": "https://www.mci.mn/#contact",
+  "phone": "94140478",
+  "email": "magiccodeai@gmail.com",
   "address": null,
   "opening_hours": null,
-  "facebook": null,
+  "facebook": "https://www.facebook.com/profile.php?id=61576967122971",
   "instagram": null,
-  "contact_method": "Вебсайтын холбоо барих мэдээлэл болон үйлчилгээний хүсэлтийн маягтаар хандана.",
+  "contact_method": "Утас: 94140478. Имэйл: magiccodeai@gmail.com. Facebook хуудас: https://www.facebook.com/profile.php?id=61576967122971. Вебсайт хөгжүүлэлтийн хүсэлтийг вебсайтын үйлчилгээний маягтаар илгээнэ.",
   "unknown_fields": [
-    "Албан ёсны утас",
-    "Имэйл",
     "Хаяг",
     "Ажиллах цаг",
-    "Сошиал хаягууд"
+    "Instagram"
   ],
   "do_not_invent": true
 }

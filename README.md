@@ -2,13 +2,13 @@
 
 Magic Code AI-ийн (www.mci.mn) онлайн сургалт, вебсайт хөгжүүлэлт, мерчийн RAG чатбот "Magi".
 
-Stack: Python, FastAPI, Gemini, Supabase pgvector, React.
+Stack: Python, FastAPI, Gemini, Supabase pgvector.
 
 ## Бүтэц
 - `api/`: чатын API (FastAPI, Vercel дээр Root Directory = `api`)
 - `ingest/`: PDF, DOCX, JSON, TXT/MD файлыг мэдлэгийн санд ачаалах
 - `evals/`: үнэлгээний асуултууд ба ажиллуулах скрипт
-- `widget/`: React чат компонент (эх хувь; сайт `mci-web/src/components/ChatWidget/` руу хуулж ашигладаг)
+- Чатын widget нь сайтын repo-д байна: `mci-web/src/components/ChatWidget/`. Хоёр repo зөвхөн `/chat` API-аар холбогдоно (`mci-web/docs/API.md`)
 - `knowledge/`: мэдлэгийн сангийн эх файлууд (`course/`, `web/`, `merch/`, `general/` хавтсаар ангилна)
 
 ## Тохиргоо
