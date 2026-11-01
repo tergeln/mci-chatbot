@@ -3,9 +3,6 @@ import sys
 from pathlib import Path
 
 from chunker import build_chunks
-from readers import SUPPORTED, load_document
-from settings import ROOT, require
-from chunker import build_chunks
 from embedder import embed_documents
 from readers import SUPPORTED, load_document
 from settings import ROOT, require
@@ -106,6 +103,24 @@ def process_file(path: Path, db, dry_run: bool, force: bool) -> None:
     print(f"  ✓ {len(rows)} хэсэг хадгалагдлаа")
 
 
+def prune(db, dry_run: bool) -> None:
+    """knowledge/-д байхгүй болсон файлуудын эх сурвалжийг DB-ээс устгана
+    (kb_chunks нь cascade-аар хамт устна)."""
+    sources = db.table("kb_sources").select("id, source_path").execute().data
+    stale = [s for s in sources if not (KNOWLEDGE / s["source_path"]).is_file()]
+    if not stale:
+        print("Устгах эх сурвалж алга")
+        return
+    for s in stale:
+        if dry_run:
+            print(f"  устгагдана: {s['source_path']}")
+        else:
+            db.table("kb_sources").delete().eq("id", s["id"]).execute()
+            print(f"  ✓ устгалаа: {s['source_path']}")
+    if dry_run:
+        print(f"{len(stale)} эх сурвалж устгагдана (--dry-run, юу ч өөрчлөгдсөнгүй)")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Файлуудыг мэдлэгийн санд ачаалах")
     parser.add_argument("target", nargs="?", default=str(KNOWLEDGE),
@@ -114,7 +129,13 @@ def main() -> None:
                         help="зөвхөн хэсэглэлтийг харуулна, embedding/DB-д хүрэхгүй")
     parser.add_argument("--force", action="store_true",
                         help="өөрчлөгдөөгүй файлыг ч дахин ачаалах")
+    parser.add_argument("--prune", action="store_true",
+                        help="knowledge/-аас устгасан файлуудыг DB-ээс цэвэрлэх (--dry-run-тай хамт бол зөвхөн жагсаана)")
     args = parser.parse_args()
+
+    if args.prune:
+        prune(get_db(), args.dry_run)
+        return
 
     target = Path(args.target).resolve()
     if not target.exists():

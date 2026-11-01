@@ -19,7 +19,7 @@ EMBED_DIMS = 1536
 
 GEN_MODEL = os.getenv("GEN_MODEL", "gemini-3.5-flash-lite")
 GEN_FALLBACK_MODEL = os.getenv("GEN_FALLBACK_MODEL", "gemini-3.8-flash")
-MIN_SIMILARITY = float(os.getenv("MIN_SIMILARITY", "0.55"))
+MIN_SIMILARITY = float(os.getenv("MIN_SIMILARITY", "0.60"))
 TOP_K = int(os.getenv("TOP_K", "6"))
 DEBUG_RETRIEVAL = os.getenv("DEBUG_RETRIEVAL") == "1"
 CONTACT_TEXT = os.getenv("CONTACT_TEXT", "").strip()

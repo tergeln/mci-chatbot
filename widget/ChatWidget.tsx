@@ -4,23 +4,21 @@ import { useEffect, useRef, useState } from "react";
 import "./ChatWidget.css";
 
 type Role = "user" | "assistant";
-type Source = { title: string; heading?: string | null; page?: number | null };
 type Message = {
   id: number;
   role: Role;
   content: string;
-  sources?: Source[];
-  found?: boolean;
   error?: boolean;
 };
+type Suggestion = { label: string; question: string };
 
 type Props = {
   apiUrl?: string;
   business?: "course" | "web" | "merch";
   title?: string;
   greeting?: string;
-  suggestions?: string[];
-  showSources?: boolean;
+  avatarUrl?: string;
+  suggestions?: Suggestion[];
 };
 
 const API_URL = (import.meta.env.VITE_CHAT_API_URL as string | undefined) ?? "";
@@ -29,10 +27,14 @@ const GENERIC_ERROR = "Түр алдаа гарлаа. Дахин оролдон
 export default function ChatWidget({
   apiUrl = API_URL,
   business,
-  title = "Туслах",
-  greeting = "Сайн байна уу! Би вебсайт хөгжүүлэлт, мерч, онлайн сургалтын талаарх асуултад хариулна.",
-  suggestions = ["Вебсайт хийлгэхэд хэдэн төгрөг вэ?", "Ямар сургалтууд байдаг вэ?"],
-  showSources = true,
+  title = "Magi Шидэт туслах",
+  greeting = "Сайн уу! Намайг Magi гэдэг. Би Magic Code AI-ийн туслах. Танд юугаар туслах вэ?",
+  avatarUrl = "/assets/chatbot-owl.png",
+  suggestions = [
+    { label: "Сургалтууд", question: "Ямар сургалтууд байдаг вэ?" },
+    { label: "Вебсайтын үнэ", question: "Вебсайт хийлгэхэд хэдэн төгрөг вэ?" },
+    { label: "Холбогдох", question: "Тантай хэрхэн холбогдох вэ?" },
+  ],
 }: Props) {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -41,6 +43,9 @@ export default function ChatWidget({
   const idRef = useRef(1);
   const listRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const launcherRef = useRef<HTMLButtonElement>(null);
+  const wasOpen = useRef(false);
+  const requestRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
     const el = listRef.current;
@@ -49,6 +54,8 @@ export default function ChatWidget({
 
   useEffect(() => {
     if (open) inputRef.current?.focus();
+    else if (wasOpen.current) launcherRef.current?.focus(); // хаасны дараа фокусыг шувуунд буцаана
+    wasOpen.current = open;
   }, [open]);
 
   useEffect(() => {
@@ -62,6 +69,15 @@ export default function ChatWidget({
 
   function push(message: Omit<Message, "id">) {
     setMessages((prev) => [...prev, { ...message, id: idRef.current++ }]);
+  }
+
+  function reset() {
+    requestRef.current?.abort(); // хүлээгдэж буй хариу шинэ чатад орж ирэхгүй
+    requestRef.current = null;
+    setMessages([]);
+    setInput("");
+    setLoading(false);
+    inputRef.current?.focus();
   }
 
   async function send(text: string) {
@@ -84,7 +100,12 @@ export default function ChatWidget({
 
     setLoading(true);
     const controller = new AbortController();
-    const timer = window.setTimeout(() => controller.abort(), 30000);
+    requestRef.current = controller;
+    let timedOut = false;
+    const timer = window.setTimeout(() => {
+      timedOut = true;
+      controller.abort();
+    }, 30000);
 
     try {
       const res = await fetch(`${apiUrl.replace(/\/$/, "")}/chat`, {
@@ -97,13 +118,9 @@ export default function ChatWidget({
       if (!res.ok) {
         throw new Error(typeof data?.detail === "string" ? data.detail : GENERIC_ERROR);
       }
-      push({
-        role: "assistant",
-        content: String(data.answer ?? ""),
-        sources: Array.isArray(data.sources) ? data.sources : [],
-        found: Boolean(data.found),
-      });
+      push({ role: "assistant", content: String(data.answer ?? "") });
     } catch (e) {
+      if (controller.signal.aborted && !timedOut) return; // reset() цуцалсан
       const message =
         e instanceof DOMException && e.name === "AbortError"
           ? "Хариу удаан байна. Дахин оролдоно уу."
@@ -115,38 +132,43 @@ export default function ChatWidget({
       push({ role: "assistant", content: message, error: true });
     } finally {
       window.clearTimeout(timer);
-      setLoading(false);
+      if (requestRef.current === controller) {
+        requestRef.current = null;
+        setLoading(false);
+      }
     }
   }
 
   return (
-    <div className="cw-root">
+    <div className={"cw-root" + (open ? " cw-open" : "")}>
       {open && (
         <section className="cw-panel" role="dialog" aria-label={title}>
-          <header className="cw-header">
-            <div>
-              <strong>{title}</strong>
-              <span className="cw-sub">AI туслах</span>
-            </div>
-            <button type="button" className="cw-close" onClick={() => setOpen(false)} aria-label="Хаах">
+          {/* <header> биш: сайтын глобал `header {position: fixed}` дүрэмд өртөхгүйн тулд */}
+          <div className="cw-header">
+            <img className="cw-avatar" src={avatarUrl} alt="" width="44" height="44" />
+            <strong>{title}</strong>
+            <button
+              type="button"
+              className="cw-icon-btn cw-refresh"
+              onClick={reset}
+              disabled={messages.length === 0 && !loading}
+              aria-label="Чатыг шинээр эхлүүлэх"
+              title="Чатыг шинээр эхлүүлэх"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M20 11a8 8 0 1 0-2.34 5.66" />
+                <path d="M20 4v7h-7" />
+              </svg>
+            </button>
+            <button type="button" className="cw-icon-btn cw-close" onClick={() => setOpen(false)} aria-label="Хаах">
               ×
             </button>
-          </header>
+          </div>
 
           <div className="cw-messages" ref={listRef} aria-live="polite">
             <div className="cw-msg cw-assistant">
               <p>{greeting}</p>
             </div>
-
-            {messages.length === 0 && suggestions.length > 0 && (
-              <div className="cw-chips">
-                {suggestions.map((s) => (
-                  <button type="button" key={s} onClick={() => send(s)} disabled={loading}>
-                    {s}
-                  </button>
-                ))}
-              </div>
-            )}
 
             {messages.map((m) => (
               <div
@@ -154,24 +176,10 @@ export default function ChatWidget({
                 className={
                   "cw-msg " +
                   (m.role === "user" ? "cw-user" : "cw-assistant") +
-                  (m.error ? " cw-error" : "") +
-                  (m.found === false ? " cw-muted" : "")
+                  (m.error ? " cw-error" : "")
                 }
               >
                 <p>{m.content}</p>
-                {showSources && m.sources && m.sources.length > 0 && (
-                  <details className="cw-sources">
-                    <summary>Эх сурвалж</summary>
-                    <ul>
-                      {m.sources.map((s, i) => (
-                        <li key={i}>
-                          {s.heading || s.title}
-                          {s.page ? `, ${s.page}-р хуудас` : ""}
-                        </li>
-                      ))}
-                    </ul>
-                  </details>
-                )}
               </div>
             ))}
 
@@ -186,6 +194,16 @@ export default function ChatWidget({
             )}
           </div>
 
+          {messages.length === 0 && suggestions.length > 0 && (
+            <div className="cw-chips">
+              {suggestions.map((s) => (
+                <button type="button" key={s.label} onClick={() => send(s.question)} disabled={loading}>
+                  {s.label}
+                </button>
+              ))}
+            </div>
+          )}
+
           <form
             className="cw-form"
             onSubmit={(e) => {
@@ -197,32 +215,29 @@ export default function ChatWidget({
               ref={inputRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Асуултаа бичнэ үү..."
+              placeholder="Асуух зүйлээ бичээрэй…"
               maxLength={500}
               aria-label="Асуулт"
             />
-            <button type="submit" disabled={loading || !input.trim()}>
-              Илгээх
+            <button type="submit" disabled={loading || !input.trim()} aria-label="Илгээх">
+              ↑
             </button>
           </form>
-          <p className="cw-note">Хариулт буруу байж болзошгүй. Чухал мэдээллээ баталгаажуулна уу.</p>
         </section>
       )}
 
-      <button
-        type="button"
-        className="cw-launcher"
-        onClick={() => setOpen((o) => !o)}
-        aria-label={open ? "Чатыг хаах" : "Чат нээх"}
-        aria-expanded={open}
-      >
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path
-            d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H9l-4.2 3.4A.5.5 0 0 1 4 20.5V17a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"
-            fill="currentColor"
-          />
-        </svg>
-      </button>
+      {/* Чат нээлттэй үед шувуу нуугдана, хаахдаа × эсвэл Esc */}
+      {!open && (
+        <button
+          type="button"
+          className="cw-launcher"
+          ref={launcherRef}
+          onClick={() => setOpen(true)}
+          aria-label="Magi шидэт туслахыг нээх"
+        >
+          <img src={avatarUrl} alt="" width="76" height="76" />
+        </button>
+      )}
     </div>
   );
 }

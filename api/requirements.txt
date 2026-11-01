@@ -1,5 +1,5 @@
-fastapi
-uvicorn[standard]
-google-genai
-supabase
-python-dotenv
+fastapi==0.162.0
+uvicorn[standard]==0.54.0
+google-genai==2.34.0
+supabase==2.33.0
+python-dotenv==1.2.4
