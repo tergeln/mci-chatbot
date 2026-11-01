@@ -5,6 +5,10 @@ from pathlib import Path
 from chunker import build_chunks
 from readers import SUPPORTED, load_document
 from settings import ROOT, require
+from chunker import build_chunks
+from embedder import embed_documents
+from readers import SUPPORTED, load_document
+from settings import ROOT, require
 
 KNOWLEDGE = ROOT / "knowledge"
 BUSINESSES = {"course", "web", "merch", "general"}
@@ -126,8 +130,7 @@ def main() -> None:
 
     db = None
     if not args.dry_run:
-        from embedder import embed_documents  # noqa: F401  (түлхүүрийг эрт шалгана)
-        globals()["embed_documents"] = embed_documents
+        require("GEMINI_API_KEY")   # түлхүүрийг эхлээд шалгана
         db = get_db()
 
     failed = 0
