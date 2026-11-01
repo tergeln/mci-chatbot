@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.3.0",
+  "language": "mn",
+  "document_id": "mci-merch",
+  "document_type": "merch",
+  "visibility": "public",
+  "approval_status": "needs_company_review",
+  "source_basis": "User-provided system analysis, workshop image and confirmed chat requirements; DOCX not included",
+  "catalog_status": "planned_not_verified_live",
+  "products": [
+    {
+      "id": "bag",
+      "category": "цүнх",
+      "title": null,
+      "price_mnt": null,
+      "images": [],
+      "stock": null,
+      "variants": []
+    },
+    {
+      "id": "mug",
+      "category": "аяга",
+      "title": null,
+      "price_mnt": null,
+      "images": [],
+      "stock": null,
+      "variants": []
+    }
+  ],
+  "purchase_flow_description": "Бүтээгдэхүүнээ сонгож сагсанд нэмэх, хүлээн авах/хүргэлтийн мэдээлэл оруулах, QPay-аар төлөх захиалгын урсгал төлөвлөгдсөн.",
+  "pricing_source": "backend",
+  "availability_source": "backend",
+  "delivery_options": null,
+  "return_policy": null,
+  "note": "Бодит SKU, үнэ, зураг, үлдэгдэл, хүргэлтийн нөхцөл баталгаажаагүй."
+}

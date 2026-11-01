@@ -1,0 +1,280 @@
+{
+  "schema_version": "0.3.0",
+  "language": "mn",
+  "document_id": "mci-faq",
+  "document_type": "faq",
+  "visibility": "public",
+  "approval_status": "needs_company_review",
+  "source_basis": "User-provided system analysis, workshop image and confirmed chat requirements; DOCX not included",
+  "faqs": [
+    {
+      "id": "faq-01",
+      "category": "general",
+      "question": "Magic Code AI ямар чиглэлээр үйл ажиллагаа явуулдаг вэ?",
+      "answer": "Веб хөгжүүлэлтийн үйлчилгээ, сургалтын мэдээлэл, мерч бүтээгдэхүүн, хийсэн ажлууд болон байгууллагын мэдээ мэдээллийг хүргэх чиглэлтэй.",
+      "related_documents": [
+        "company.json",
+        "services.json"
+      ],
+      "requires_live_lookup": false,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-02",
+      "category": "services",
+      "question": "Веб хөгжүүлэлтийн үйлчилгээ авахын тулд яах вэ?",
+      "answer": "Вебсайт дээрх үйлчилгээний хүсэлтийн маягтаар нэр, холбоо барих мэдээлэл, төслийн тайлбараа илгээнэ.",
+      "related_documents": [
+        "services.json"
+      ],
+      "requires_live_lookup": false,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-03",
+      "category": "services",
+      "question": "Вебсайт хөгжүүлэх үнэ хэд вэ?",
+      "answer": "Тогтсон үнэ энэ эх сурвалжид байхгүй. Төслийн шаардлагаа хүсэлтийн маягтаар илгээж үнийн санал авна.",
+      "related_documents": [
+        "services.json"
+      ],
+      "requires_live_lookup": false,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-04",
+      "category": "courses",
+      "question": "Ямар сургалтуудын мэдээлэл байгаа вэ?",
+      "answer": "Бизнесийн өгөгдөл ба AI сургалтын 3 цагийн хөтөлбөр болон 16 долоо хоногийн бичлэгтэй сургалтын мэдээлэл ирсэн. Албан ёсны нэр, бүртгэл нээлттэй эсэхийг баталгаажуулах хэрэгтэй.",
+      "related_documents": [
+        "courses.json"
+      ],
+      "requires_live_lookup": false,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-05",
+      "category": "courses",
+      "question": "Data Analytics & AI сургалтын хөтөлбөр хэдэн цаг вэ?",
+      "answer": "Илгээсэн сургалтын хөтөлбөр 13:00–16:00 буюу 3 цаг үргэлжилнэ. Зохион байгуулагдах огноо баталгаажаагүй.",
+      "related_documents": [
+        "courses.json"
+      ],
+      "requires_live_lookup": false,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-06",
+      "category": "courses",
+      "question": "Data Analytics & AI сургалтаар юу үзэх вэ?",
+      "answer": "Дата сэтгэлгээ ба KPI, өгөгдлийн шинжилгээ (Excel/Google Sheets, pivot, visualization), AI ба prompt engineering, AI-гаар бизнесийн шийдвэр гаргах, багаар кейс боловсруулах сэдвүүд багтсан.",
+      "related_documents": [
+        "courses.json"
+      ],
+      "requires_live_lookup": false,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-07",
+      "category": "courses",
+      "question": "Data Analytics & AI сургалтын үнэ хэд вэ?",
+      "answer": "Үнэ баталгаажаагүй. Сургалтын одоогийн үнийг үндсэн вебсайтын backend-ээс шалгах хэрэгтэй.",
+      "related_documents": [
+        "courses.json"
+      ],
+      "requires_live_lookup": true,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-08",
+      "category": "courses",
+      "question": "16 долоо хоногийн бичлэгтэй сургалт гэж юу вэ?",
+      "answer": "16 долоо хоногийн бичлэгтэй сургалтын санал байгаа. Албан ёсны нэр, хичээлүүдийн тоо болон сэдвүүд одоогоор баталгаажаагүй.",
+      "related_documents": [
+        "courses.json"
+      ],
+      "requires_live_lookup": false,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-09",
+      "category": "courses",
+      "question": "Бичлэгтэй сургалтын нэг хичээл хэд вэ?",
+      "answer": "Өмнө өгсөн лавлах үнэ 1 хичээл 1,000₮ байсан. Энэ нь одоогийн үнийн баталгаа биш; худалдан авахын өмнө live үнийг backend-ээс шалгана.",
+      "related_documents": [
+        "courses.json"
+      ],
+      "requires_live_lookup": true,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-10",
+      "category": "courses",
+      "question": "Бичлэгтэй сургалтыг бүтнээр нь хэдээр авах вэ?",
+      "answer": "Өмнө өгсөн лавлах үнэ 16 долоо хоногийн сургалтын багц 10,000₮ байсан. Энэ нь одоогийн үнийн баталгаа биш; live үнийг backend-ээс шалгана.",
+      "related_documents": [
+        "courses.json"
+      ],
+      "requires_live_lookup": true,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-11",
+      "category": "payments",
+      "question": "Төлбөр төлсний дараа бичлэгээ шууд үзэж болох уу?",
+      "answer": "Төлбөр сервер талд баталгаажиж сургалтын эрх олгогдсоны дараа бичлэг үзэхээр төлөвлөсөн. Энэ боломж бодитоор нэвтэрсэн эсэхийг одоогоор баталгаажуулаагүй.",
+      "related_documents": [
+        "courses.json",
+        "policies.json"
+      ],
+      "requires_live_lookup": true,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-12",
+      "category": "payments",
+      "question": "Ямар төлбөрийн хэрэгсэл ашиглах вэ?",
+      "answer": "Сургалт болон мерчийн онлайн төлбөрт QPay ашиглахаар сонгосон. Үйлчилгээний бодит төлөвийг checkout дээр шалгана.",
+      "related_documents": [
+        "policies.json"
+      ],
+      "requires_live_lookup": false,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-13",
+      "category": "merch",
+      "question": "Мерч бүтээгдэхүүн байгаа юу?",
+      "answer": "Цүнх, аяга зэрэг мерчийг вебсайтаар каталог болон онлайн захиалгатай болгохоор төлөвлөсөн. Одоогийн бэлэн бүтээгдэхүүн, үнэ, нөөц баталгаажаагүй.",
+      "related_documents": [
+        "merch.json"
+      ],
+      "requires_live_lookup": true,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-14",
+      "category": "merch",
+      "question": "Мерчийн үнэ хэд вэ?",
+      "answer": "Мерчийн үнэ эх сурвалжид баталгаажаагүй. Вебсайтын бүтээгдэхүүний одоогийн мэдээллээс шалгана.",
+      "related_documents": [
+        "merch.json"
+      ],
+      "requires_live_lookup": true,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-15",
+      "category": "merch",
+      "question": "Мерч хүргэлттэй юу?",
+      "answer": "Хүргэлтийн арга, үнэ, нөхцөл одоогоор баталгаажаагүй. Захиалгын үед нийтлэгдсэн нөхцөлийг шалгах шаардлагатай.",
+      "related_documents": [
+        "merch.json",
+        "policies.json"
+      ],
+      "requires_live_lookup": true,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-16",
+      "category": "portfolio",
+      "question": "Хийсэн төслүүдтэй танилцаж болох уу?",
+      "answer": "Вебсайтад хийсэн ажлуудын portfolio хэсэг байхаар төлөвлөсөн. Одоогоор баталгаажсан төслийн нэр, холбоос энэ Knowledge Base-д алга.",
+      "related_documents": [
+        "website_content.json"
+      ],
+      "requires_live_lookup": false,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-17",
+      "category": "partners",
+      "question": "Танай хамтрагч байгууллагууд хэн бэ?",
+      "answer": "Хамтрагчдын хэсэг төлөвлөгдсөн боловч баталгаажсан байгууллагуудын нэр, холбоос энэ Knowledge Base-д байхгүй.",
+      "related_documents": [
+        "website_content.json"
+      ],
+      "requires_live_lookup": false,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-18",
+      "category": "jobs",
+      "question": "Ажлын байр зарладаг уу?",
+      "answer": "Ажлын зарын хэсэг төлөвлөгдсөн. Одоогийн нээлттэй ажлын байр байгаа эсэхийг вебсайтын хамгийн сүүлийн мэдээллээс шалгана.",
+      "related_documents": [
+        "website_content.json"
+      ],
+      "requires_live_lookup": true,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-19",
+      "category": "events",
+      "question": "Арга хэмжээ, сургалтын үйл явдлын хуваарь хаанаас харах вэ?",
+      "answer": "Вебсайтад үйл явдлын хэсэг байхаар төлөвлөсөн. Одоогийн огноо, байршил баталгаажаагүй тул live мэдээлэл шалгана.",
+      "related_documents": [
+        "website_content.json"
+      ],
+      "requires_live_lookup": true,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-20",
+      "category": "contact",
+      "question": "Компанийн утас, имэйл, хаяг юу вэ?",
+      "answer": "Энэ Knowledge Base-д албан ёсны утас, имэйл, хаяг баталгаажаагүй. mci.mn-ийн холбоо барих хэсгийг шалгана уу.",
+      "related_documents": [
+        "contact.json"
+      ],
+      "requires_live_lookup": true,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-21",
+      "category": "payments",
+      "question": "Төлбөр буцаах боломжтой юу?",
+      "answer": "Буцаалт болон цуцлалтын албан ёсны бодлого баталгаажаагүй. Худалдан авахаасаа өмнө компаниас нөхцөлийг тодруулна уу.",
+      "related_documents": [
+        "policies.json"
+      ],
+      "requires_live_lookup": false,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-22",
+      "category": "orders",
+      "question": "Захиалгын төлөвөө чатботоор шалгаж болох уу?",
+      "answer": "Хэрэглэгчийн хувийн захиалгын төлөвийг зөвхөн баталгаажсан эрхээр үндсэн backend-ээс шалгах ёстой. Чатботын ийм холболт ашиглалтад орсон эсэх нь одоогоор баталгаажаагүй.",
+      "related_documents": [
+        "policies.json"
+      ],
+      "requires_live_lookup": true,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-23",
+      "category": "courses",
+      "question": "Сургалтад хэрхэн бүртгүүлэх вэ?",
+      "answer": "Сургалтаа сонгож, захиалга болон QPay төлбөрийн урсгалаар бүртгүүлэхээр төлөвлөсөн. Одоогийн бүртгэлийн боломжийг вебсайтаас шалгана уу.",
+      "related_documents": [
+        "courses.json",
+        "policies.json"
+      ],
+      "requires_live_lookup": true,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    },
+    {
+      "id": "faq-24",
+      "category": "news",
+      "question": "Мэдээ нийтлэл хаанаас унших вэ?",
+      "answer": "Вебсайтад мэдээ, нийтлэлийн хэсэг төлөвлөгдсөн. Энэ Knowledge Base-д баталгаажсан нийтлэлийн агуулга хараахан ороогүй.",
+      "related_documents": [
+        "website_content.json"
+      ],
+      "requires_live_lookup": false,
+      "knowledge_status": "user_confirmed_or_source_supported"
+    }
+  ],
+  "note": "Үнэ, сул орон тоо, захиалга, төлбөр, ажлын байр, үйл явдал зэрэг динамик мэдээлэлд backend шаардлагатай. FAQ-д хадгалсан snapshot нь live баталгаа биш."
+}

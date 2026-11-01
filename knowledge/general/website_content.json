@@ -1,0 +1,69 @@
+{
+  "schema_version": "0.3.0",
+  "language": "mn",
+  "document_id": "mci-website_content",
+  "document_type": "website_content",
+  "visibility": "public",
+  "approval_status": "needs_company_review",
+  "source_basis": "User-provided system analysis, workshop image and confirmed chat requirements; DOCX not included",
+  "sections": [
+    {
+      "id": "portfolio",
+      "name": "Хийсэн ажлууд",
+      "expected_information": [
+        "Төслийн нэр",
+        "Тайлбар",
+        "Зураг",
+        "Холбоос"
+      ],
+      "published_entries": [],
+      "status": "content_not_provided"
+    },
+    {
+      "id": "partners",
+      "name": "Хамтрагчид",
+      "expected_information": [
+        "Нэр",
+        "Лого",
+        "Вебсайт"
+      ],
+      "published_entries": [],
+      "status": "content_not_provided"
+    },
+    {
+      "id": "news",
+      "name": "Мэдээ",
+      "expected_information": [
+        "Гарчиг",
+        "Нийтлэгдсэн огноо",
+        "Агуулга"
+      ],
+      "published_entries": [],
+      "status": "content_not_provided"
+    },
+    {
+      "id": "jobs",
+      "name": "Ажлын зар",
+      "expected_information": [
+        "Албан тушаал",
+        "Тавигдах шаардлага",
+        "Хугацаа",
+        "Холбоо барих суваг"
+      ],
+      "published_entries": [],
+      "status": "content_not_provided"
+    },
+    {
+      "id": "events",
+      "name": "Үйл явдал",
+      "expected_information": [
+        "Нэр",
+        "Огноо",
+        "Байршил эсвэл онлайн холбоос"
+      ],
+      "published_entries": [],
+      "status": "content_not_provided"
+    }
+  ],
+  "rule": "Хоосон жагсаалтыг нийтлэгдсэн контент байхгүй гэж тайлбарлахгүй; эх сурвалжид баталгаажсан мэдээлэл ирээгүй гэсэн утгатай."
+}

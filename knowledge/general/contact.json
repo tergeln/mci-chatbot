@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.3.0",
+  "language": "mn",
+  "document_id": "mci-contact",
+  "document_type": "contact",
+  "visibility": "public",
+  "approval_status": "needs_company_review",
+  "source_basis": "User-provided system analysis, workshop image and confirmed chat requirements; DOCX not included",
+  "website": "https://mci.mn",
+  "contact_page_url": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "opening_hours": null,
+  "facebook": null,
+  "instagram": null,
+  "contact_method": "Вебсайтын холбоо барих мэдээлэл болон үйлчилгээний хүсэлтийн маягтаар хандана.",
+  "unknown_fields": [
+    "Албан ёсны утас",
+    "Имэйл",
+    "Хаяг",
+    "Ажиллах цаг",
+    "Сошиал хаягууд"
+  ],
+  "do_not_invent": true
+}

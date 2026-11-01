@@ -1,0 +1,44 @@
+{
+  "version": "0.3.0",
+  "status": "draft_not_implemented",
+  "purpose": "Proposed adapter between chatbot and main backend; not a live API specification",
+  "data_modes": {
+    "current": "mock",
+    "future": "main_backend"
+  },
+  "dynamic_categories": [
+    "course_current_prices",
+    "course_enrollment_open",
+    "course_sessions",
+    "merch_price_stock",
+    "orders",
+    "payment_status",
+    "video_entitlements",
+    "published_news_events_jobs"
+  ],
+  "api_contracts_to_confirm": [
+    {
+      "purpose": "courses",
+      "example_method": "GET",
+      "example_path": "/api/courses"
+    },
+    {
+      "purpose": "course details",
+      "example_method": "GET",
+      "example_path": "/api/courses/{slug}"
+    },
+    {
+      "purpose": "private order status",
+      "example_method": "GET",
+      "example_path": "/api/orders/{id}/status",
+      "requires_authenticated_scoped_access": true
+    }
+  ],
+  "security_rules": [
+    "Never expose QPay credentials or Supabase service role keys to RAG/chat UI",
+    "Payment confirmation and entitlement granting remain responsibility of main backend",
+    "Never trust browser redirect as proof of payment",
+    "No private personal or payment data in public Knowledge Base"
+  ],
+  "source_of_truth": "main_backend_after_implementation"
+}

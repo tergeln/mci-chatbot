@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.3.0",
+  "language": "mn",
+  "document_id": "mci-company",
+  "document_type": "company",
+  "visibility": "public",
+  "approval_status": "needs_company_review",
+  "source_basis": "User-provided system analysis, workshop image and confirmed chat requirements; DOCX not included",
+  "name": "Magic Code AI",
+  "website": "https://mci.mn",
+  "overview": "Magic Code AI нь вэб хөгжүүлэлтийн үйлчилгээ, сургалтын мэдээлэл, мерч бүтээгдэхүүн болон байгууллагын үйл ажиллагаатай холбоотой мэдээллийг вэбсайтаар хүргэх чиглэлтэй.",
+  "public_sections": [
+    "Компанийн танилцуулга",
+    "Үйлчилгээ",
+    "Сургалт",
+    "Мерч",
+    "Хийсэн ажлууд",
+    "Хамтрагчид",
+    "Мэдээ",
+    "Ажлын зар",
+    "Үйл явдал",
+    "Түгээмэл асуулт",
+    "Холбоо барих"
+  ],
+  "official_legal_name": null,
+  "mission": null,
+  "verified_since": null,
+  "notes": "Эдгээр нь системийн шинжилгээнд хамрагдсан вебсайтын хэсгүүд; тус бүрийн контент нийтлэгдсэн гэж батлаагүй."
+}

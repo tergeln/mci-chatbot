@@ -1,0 +1,55 @@
+{
+  "schema_version": "0.3.0",
+  "language": "mn",
+  "document_id": "mci-policies",
+  "document_type": "policies",
+  "visibility": "public",
+  "approval_status": "needs_company_review",
+  "source_basis": "User-provided system analysis, workshop image and confirmed chat requirements; DOCX not included",
+  "public_customer_information": [
+    {
+      "id": "training-payment",
+      "topic": "Сургалтын төлбөр",
+      "message": "Сургалтын онлайн төлбөрийг QPay-аар гүйцэтгэхээр сонгосон.",
+      "status": "payment_method_selected_implementation_not_confirmed"
+    },
+    {
+      "id": "video-access",
+      "topic": "Бичлэг үзэх эрх",
+      "message": "Төлбөрийг сервер талд баталгаажуулж, тухайн сургалтын эрх идэвхжсэний дараа бичлэг үзэх боломж олгох төлөвлөгөөтэй.",
+      "status": "planned_behavior"
+    },
+    {
+      "id": "merch-payment",
+      "topic": "Бараа захиалга",
+      "message": "Мерч бүтээгдэхүүн сагс, захиалга, QPay төлбөртэй байхаар төлөвлөгдсөн.",
+      "status": "planned_behavior"
+    },
+    {
+      "id": "service-inquiry",
+      "topic": "Үйлчилгээний хүсэлт",
+      "message": "Веб хөгжүүлэлтийн үйлчилгээний хүсэлтийг онлайн маягтаар илгээнэ.",
+      "status": "confirmed_business_requirement"
+    },
+    {
+      "id": "refunds",
+      "topic": "Буцаалт ба цуцлалт",
+      "message": null,
+      "status": "policy_not_confirmed"
+    },
+    {
+      "id": "delivery",
+      "topic": "Хүргэлт ба очиж авах",
+      "message": null,
+      "status": "policy_not_confirmed"
+    },
+    {
+      "id": "receipt",
+      "topic": "Татварын баримт",
+      "message": null,
+      "status": "policy_not_confirmed"
+    }
+  ],
+  "security_public_rule": "Хувийн захиалга, төлбөр, сургалтын эрхийн мэдээллийг баталгаажсан эрхгүй хэрэглэгчид харуулахгүй.",
+  "note": "Энд байгаа төлөвлөгөөг одоо ажиллаж байгаа үйлчилгээ гэж chatbot баталж хэлэх ёсгүй."
+}

@@ -1,0 +1,136 @@
+{
+  "schema_version": "0.3.0",
+  "language": "mn",
+  "document_id": "mci-courses",
+  "document_type": "courses",
+  "visibility": "public",
+  "approval_status": "needs_company_review",
+  "source_basis": "User-provided system analysis, workshop image and confirmed chat requirements; DOCX not included",
+  "pricing_policy": {
+    "live_source": "main_backend_api",
+    "live_api_available": false,
+    "snapshot_not_authoritative": true,
+    "fallback_if_unavailable": "Одоогийн үнэ болон сул орон тоог баталгаажуулж чадсангүй. Вебсайтаар шалгана уу."
+  },
+  "courses": [
+    {
+      "id": "business-data-ai-workshop",
+      "name": "Бизнесийн өгөгдөл, AI сургалтын хөтөлбөр",
+      "format": "workshop",
+      "published_status": "needs_confirmation",
+      "duration_minutes": 180,
+      "schedule_time_zone": "Asia/Ulaanbaatar",
+      "starts_at": "13:00",
+      "ends_at": "16:00",
+      "session_date": null,
+      "price_mnt": null,
+      "price_source": "not_provided",
+      "price_lookup": "backend",
+      "modules": [
+        {
+          "order": 1,
+          "title": "Дата сэтгэлгээ & суурь ойлголт",
+          "starts_at": "13:00",
+          "ends_at": "13:30",
+          "topics": [
+            "Data-driven business гэж юу вэ?",
+            "KPI, метрикс тодорхойлох аргууд",
+            "Стартапуудын түгээмэл дата алдаанууд"
+          ],
+          "activity": "Оролцогч өөрийн бизнесийн 3–5 KPI тодорхойлох"
+        },
+        {
+          "order": 2,
+          "title": "Data analytics ба өгөгдлийн шинжилгээ",
+          "starts_at": "13:30",
+          "ends_at": "14:30",
+          "topics": [
+            "Data analytics-ийн үндэс (Descriptive, Diagnostic)",
+            "Excel / Google Sheets дээр дата цэвэрлэх",
+            "Pivot table",
+            "Visualization (chart)"
+          ],
+          "activity": "Борлуулалтын dataset дээр хамгийн их орлого оруулж буй бүтээгдэхүүн, борлуулалтын тренд, нэг дүгнэлт гаргах"
+        },
+        {
+          "order": 3,
+          "title": "AI суурь & бизнес хэрэглээ",
+          "starts_at": "14:30",
+          "ends_at": "15:00",
+          "topics": [
+            "AI, Generative AI ойлголт",
+            "Prompt engineering суурь",
+            "AI-г бизнес дээр ашиглах: маркетинг, судалгаа, контент"
+          ],
+          "activity": "AI ашиглан customer persona, зах зээлийн судалгаа, маркетингийн санаа гаргах"
+        },
+        {
+          "order": 4,
+          "title": "AI ашиглан бизнес шийдвэр гаргалт",
+          "starts_at": "15:00",
+          "ends_at": "15:30",
+          "topics": [
+            "Data + AI → шийдвэр гаргалтын загвар",
+            "Scenario thinking (if-then)",
+            "AI ашиглан борлуулалт өсгөх санал, шинэ бүтээгдэхүүний шийдвэр"
+          ],
+          "activity": "Борлуулалт болон хэрэглэгчийн behavior өгөгдөл дээр анализ хийх"
+        },
+        {
+          "order": 5,
+          "title": "Сургалтын нэгтгэл, чөлөөт хэлэлцүүлэг",
+          "starts_at": "15:30",
+          "ends_at": "16:00",
+          "topics": [
+            "3–4 багт хуваагдах",
+            "Өөрийн бизнес эсвэл өгсөн кейс дээр нэг асуудал тодорхойлох",
+            "Data ашиглан тайлбарлах",
+            "AI ашигласан шийдэл гаргах"
+          ],
+          "activity": "Асуудал, шинжилгээ, шийдэл, хүлээгдэж буй үр дүнгээ танилцуулах"
+        }
+      ],
+      "title_is_official": false,
+      "display_name": "Data Analytics & AI бизнесийн сургалт (түр нэр)",
+      "public_release_status": "needs_confirmation",
+      "schedule_note": "Зөвхөн хөтөлбөрийн цагийн хуваарь; зохион байгуулагдах огноо баталгаажаагүй",
+      "enrollment_available": null,
+      "payment_method": "QPay (системд хэрэгжүүлэх төлөвлөгөө)",
+      "source_reference": "Хэрэглэгчийн илгээсэн сургалтын хөтөлбөрийн зураг"
+    },
+    {
+      "id": "recorded-16-week-course",
+      "name": null,
+      "display_label": "16 долоо хоногийн бичлэгтэй сургалт (албан ёсны нэр тодорхойгүй)",
+      "format": "pre_recorded_video",
+      "duration_weeks": 16,
+      "lesson_count": null,
+      "lesson_list": [],
+      "pricing": {
+        "currency": "MNT",
+        "single_lesson": {
+          "amount_mnt": 1000,
+          "purchase_unit": "lesson"
+        },
+        "full_course": {
+          "amount_mnt": 10000,
+          "purchase_unit": "16_week_course"
+        },
+        "type": "user_provided_current_snapshot",
+        "price_lookup": "backend",
+        "price_may_change": true,
+        "snapshot_observed": "user-provided snapshot (not guaranteed live)"
+      },
+      "access_after_payment": "QPay payment verified by main backend and enrolled entitlement checked",
+      "access_duration": null,
+      "payment_provider": "QPay",
+      "published_status": "needs_company_confirmation",
+      "official_title": null,
+      "number_of_courses": null,
+      "preview_lesson_available": null,
+      "access_duration_days": null,
+      "purchasing_live_status": "backend_not_confirmed",
+      "source_reference": "Хэрэглэгчийн өгсөн 16 долоо хоногийн бичлэгтэй сургалтын мэдээлэл"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.3.0",
+  "language": "mn",
+  "document_id": "mci-services",
+  "document_type": "services",
+  "visibility": "public",
+  "approval_status": "needs_company_review",
+  "source_basis": "User-provided system analysis, workshop image and confirmed chat requirements; DOCX not included",
+  "services": [
+    {
+      "id": "web-development",
+      "name": "Вэбсайт хөгжүүлэлт",
+      "description": "Бизнес, байгууллагын веб хөгжүүлэлтийн үйлчилгээний хүсэлтийг онлайн маягтаар хүлээн авах боломжийг төлөвлөсөн.",
+      "request_channel": "website_inquiry_form",
+      "required_information": [
+        "Нэр",
+        "Холбоо барих мэдээлэл",
+        "Төслийн товч тайлбар"
+      ],
+      "price_type": "individual_quote",
+      "price_mnt": null,
+      "availability": "confirm_via_backend_or_company",
+      "public_facts_confirmed": [
+        "Веб хөгжүүлэлтийн үйлчилгээ санал болгоно",
+        "Хүсэлтийг form-оор авна"
+      ]
+    },
+    {
+      "id": "training",
+      "name": "Сургалт",
+      "description": "Бизнесийн өгөгдөл ба AI сургалтын хөтөлбөр, 16 долоо хоногийн бичлэгтэй сургалтын мэдээлэл.",
+      "course_details_source": "courses.json",
+      "availability": "confirm_via_backend"
+    },
+    {
+      "id": "merch",
+      "name": "Мерч бүтээгдэхүүн",
+      "description": "Цүнх, аяга зэрэг мерч бүтээгдэхүүнийг каталог, захиалга болон онлайн төлбөрийн системээр санал болгохоор төлөвлөсөн.",
+      "availability": "confirm_via_backend"
+    }
+  ],
+  "note": "Веб хөгжүүлэлтийн төрөл, үнэ, ажил эхлэх хугацаа, саналын нөхцөлийг эх сурвалжид тогтоогоогүй."
+}
