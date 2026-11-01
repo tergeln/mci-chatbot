@@ -5,6 +5,25 @@ from .clean import clean_text
 from .models import Section
 
 
+# Хэрэглэгчид хамааралгүй дотоод талбарууд: хайлтыг бохирдуулж, бот хэрэглэгчид давтаж хэлэх эрсдэлтэй.
+# "_"-ээр эхэлсэн түлхүүр бүр мөн алгасагдана.
+INTERNAL_KEYS = {
+    "schema_version", "version", "language", "document_id", "document_type", "visibility",
+    "approval_status", "source_basis", "source_reference", "related_documents",
+    "requires_live_lookup", "knowledge_status", "do_not_invent", "do_not_index_secrets",
+    "do_not_index_personal_data", "id",
+    # ажлын урсгалын төлвийн кодууд (planned_behavior, confirm_via_backend г.м.)
+    "status", "published_status", "public_release_status", "catalog_status", "purchasing_live_status",
+    "availability", "availability_source", "price_source", "price_lookup", "pricing_source",
+    "price_type", "request_channel", "course_details_source", "title_is_official", "type",
+    "live_source", "live_api_available", "snapshot_not_authoritative", "snapshot_observed",
+}
+
+
+def _skip(key: str) -> bool:
+    return key.startswith("_") or key in INTERNAL_KEYS
+
+
 def _flatten(value, prefix: str = "") -> list[str]:
     """Дурын JSON утгыг 'түлхүүр: утга' мөрүүд болгоно."""
     label = prefix[:-1] if prefix.endswith(".") else prefix
@@ -12,7 +31,8 @@ def _flatten(value, prefix: str = "") -> list[str]:
 
     if isinstance(value, dict):
         for key, val in value.items():
-            lines.extend(_flatten(val, f"{prefix}{key}."))
+            if not _skip(key):
+                lines.extend(_flatten(val, f"{prefix}{key}."))
     elif isinstance(value, list):
         if all(not isinstance(v, (dict, list)) for v in value):
             joined = ", ".join(str(v) for v in value if v is not None)
@@ -37,6 +57,8 @@ def read_json(path: Path) -> list[Section]:
     elif isinstance(data, dict):
         scalars = {}
         for key, val in data.items():
+            if _skip(key):
+                continue
             if isinstance(val, list):
                 groups.append((key, val))
             else:

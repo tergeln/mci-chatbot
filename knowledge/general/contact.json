@@ -9,7 +9,7 @@
   "website": "https://mci.mn",
   "contact_page_url": null,
   "phone": null,
-  "email": null,
+  "email": "magiccodeai@gmail.com",
   "address": null,
   "opening_hours": null,
   "facebook": null,
@@ -17,7 +17,6 @@
   "contact_method": "Вебсайтын холбоо барих мэдээлэл болон үйлчилгээний хүсэлтийн маягтаар хандана.",
   "unknown_fields": [
     "Албан ёсны утас",
-    "Имэйл",
     "Хаяг",
     "Ажиллах цаг",
     "Сошиал хаягууд"

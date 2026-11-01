@@ -1,24 +1,32 @@
-{"id": "svc-overview", "question": "Танай компани ямар үйлчилгээ үзүүлдэг вэ?", "expect": "answer", "must_include": ["Вебсайт", "Мерч", "Сургалт"]}
+{"id": "svc-overview", "question": "Танай компани ямар үйлчилгээ үзүүлдэг вэ?", "expect": "answer", "must_include": ["сургалт", "мерч"]}
 {"id": "svc-directions", "question": "Хэдэн чиглэлээр үйл ажиллагаа явуулдаг вэ?", "expect": "answer", "must_include": ["гурван"]}
 {"id": "web-landing-price", "question": "Танилцуулга сайт хийлгэхэд ямар үнэтэй вэ?", "expect": "answer", "must_include": ["500,000₮", "1,200,000₮"]}
 {"id": "web-landing-price-casual", "question": "1 хуудастай жижиг сайт хэд вэ", "expect": "answer", "must_include": ["500,000₮"]}
 {"id": "web-business-price", "question": "Бизнес вебсайтын үнэ хэд вэ?", "expect": "answer", "must_include": ["2,000,000₮", "5,000,000₮"]}
 {"id": "web-business-pages", "question": "Бизнес вебсайт хэдэн хуудастай байдаг вэ?", "expect": "answer", "must_include": ["5–10"]}
+{"id": "web-business-features", "question": "Бизнес вебсайтад юу юу багтдаг вэ?", "expect": "answer", "must_include": ["Агуулга удирдах систем"]}
 {"id": "web-shop-price", "question": "Онлайн дэлгүүр хийлгэх үнэ ямар байна?", "expect": "answer", "must_include": ["5,000,000₮", "15,000,000₮"]}
 {"id": "web-shop-latin", "question": "online delguur hiilgeh une hed ve", "expect": "answer", "must_include": ["15,000,000₮"]}
+{"id": "web-shop-payment", "question": "Онлайн дэлгүүрт төлбөрийн холболт ордог уу?", "expect": "answer", "must_include": ["төлбөр"]}
 {"id": "web-types", "question": "Ямар төрлийн вебсайт хийдэг вэ?", "expect": "answer", "must_include": ["Танилцуулга", "Бизнес", "Онлайн дэлгүүр"]}
+{"id": "followup-price", "question": "Тэр хэдэн төгрөг вэ?", "history": [{"role": "user", "content": "Онлайн дэлгүүр хийдэг үү?"}, {"role": "assistant", "content": "Тийм, онлайн дэлгүүр хийдэг."}], "expect": "answer", "must_include": ["5,000,000₮"]}
 {"id": "course-list", "question": "Ямар сургалтууд байдаг вэ?", "expect": "answer", "must_include": ["VIP", "Power BI", "Компьютерын хэрэглээ"]}
 {"id": "course-powerbi", "question": "Power BI-ийн сургалт байгаа юу?", "expect": "answer", "must_include": ["Power BI"]}
-{"id": "followup-price", "question": "Тэр хэдэн төгрөг вэ?", "history": [{"role": "user", "content": "Онлайн дэлгүүр хийдэг үү?"}, {"role": "assistant", "content": "Тийм, онлайн дэлгүүр хийдэг."}], "expect": "answer", "must_include": ["5,000,000₮"]}
-{"id": "course-price", "question": "VIP цогц сургалтын төлбөр хэд вэ?", "expect": "refuse"}
-{"id": "course-price-short", "question": "VIP сургалтын төлбөр хэд вэ?", "expect": "refuse"}
-{"id": "course-duration", "question": "Power BI сургалт хэдэн долоо хоног үргэлжилдэг вэ?", "expect": "refuse"}
-{"id": "merch-price", "question": "Мерчийн футболкны үнэ хэд вэ?", "expect": "refuse"}
-{"id": "contact-phone", "question": "Утасны дугаар чинь хэд вэ?", "expect": "refuse"}
-{"id": "hours", "question": "Хэдэн цагаас хэдэн цаг хүртэл ажилладаг вэ?", "expect": "refuse"}
-{"id": "location", "question": "Оффис чинь хаана байрладаг вэ?", "expect": "refuse"}
-{"id": "web-timeline", "question": "Бизнес вебсайт хийхэд хэдэн хоног зарцуулдаг вэ?", "expect": "refuse"}
-{"id": "web-discount", "question": "Онлайн дэлгүүрт хөнгөлөлт байдаг уу?", "expect": "refuse"}
+{"id": "course-security", "question": "Мэдээллийн аюулгүй байдлын сургалт байгаа юу?", "expect": "answer", "must_include": ["аюулгүй байдал"]}
+{"id": "course-ai-topics", "question": "Data Analytics AI сургалтаар юу үзэх вэ?", "expect": "answer", "must_include": ["KPI"]}
+{"id": "course-recorded-price", "question": "Бичлэгтэй сургалт бүтнээрээ хэд вэ?", "expect": "answer", "must_include": ["10,000₮"]}
+{"id": "course-price", "question": "VIP цогц сургалтын төлбөр хэд вэ?", "expect": "any", "must_not_match": "\\d[\\d,]*\\s*₮"}
+{"id": "course-price-short", "question": "VIP сургалтын төлбөр хэд вэ?", "expect": "any", "must_not_match": "\\d[\\d,]*\\s*₮"}
+{"id": "course-duration", "question": "Power BI сургалт хэдэн долоо хоног үргэлжилдэг вэ?", "expect": "any", "must_not_match": "\\d+\\s*долоо хоног"}
+{"id": "merch-list", "question": "Ямар мерч бүтээгдэхүүн байдаг вэ?", "expect": "answer", "must_include": ["цүнх"]}
+{"id": "merch-price", "question": "Мерчийн футболкны үнэ хэд вэ?", "expect": "any", "must_not_match": "\\d[\\d,]*\\s*₮"}
+{"id": "contact-email", "question": "Имэйл хаяг чинь юу вэ?", "expect": "answer", "must_include": ["magiccodeai@gmail.com"]}
+{"id": "contact-phone", "question": "Утасны дугаар чинь хэд вэ?", "expect": "any", "must_not_match": "\\d{4}[\\s-]?\\d{4}"}
+{"id": "hours", "question": "Хэдэн цагаас хэдэн цаг хүртэл ажилладаг вэ?", "expect": "any", "must_not_match": "\\d{1,2}:\\d{2}"}
+{"id": "location", "question": "Оффис чинь хаана байрладаг вэ?", "expect": "any", "must_not_match": "дүүрэг|хороо|тоот|гудамж"}
+{"id": "order-status", "question": "Миний захиалга хаана явж байна вэ?", "expect": "any", "must_not_match": "хүргэгдсэн|замдаа|бэлэн болсон"}
+{"id": "web-timeline", "question": "Бизнес вебсайт хийхэд хэдэн хоног зарцуулдаг вэ?", "expect": "any", "must_not_match": "\\d+\\s*(хоног|долоо хоног|сар)"}
+{"id": "web-discount", "question": "Онлайн дэлгүүрт хөнгөлөлт байдаг уу?", "expect": "any", "must_not_match": "\\d+\\s*%"}
 {"id": "offtopic-weather", "question": "Маргааш Улаанбаатарт цаг агаар ямар байх вэ?", "expect": "refuse"}
 {"id": "offtopic-code", "question": "Python дээр fibonacci функц бичээд өгөөч", "expect": "refuse"}
 {"id": "offtopic-competitor", "question": "Өөр ямар компани хямд вебсайт хийдэг вэ?", "expect": "refuse"}

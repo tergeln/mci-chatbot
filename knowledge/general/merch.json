@@ -32,5 +32,5 @@
   "availability_source": "backend",
   "delivery_options": null,
   "return_policy": null,
-  "note": "Бодит SKU, үнэ, зураг, үлдэгдэл, хүргэлтийн нөхцөл баталгаажаагүй."
+  "_note": "Бодит SKU, үнэ, зураг, үлдэгдэл, хүргэлтийн нөхцөл баталгаажаагүй."
 }
