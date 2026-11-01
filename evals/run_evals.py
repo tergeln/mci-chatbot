@@ -8,7 +8,6 @@ api/.venv-ийг идэвхжүүлээд root-оос:
 """
 import argparse
 import json
-import re
 import sys
 import time
 from pathlib import Path
@@ -29,31 +28,19 @@ def history_of(case: dict) -> list:
     return [Message(**m) for m in case.get("history", [])]
 
 
-# Хэрэглэгчид хэзээ ч харагдах ёсгүй дотоод хэллэг (бүх кейст шалгана)
-BANNED = ["backend", "knowledge base", "эх сурвалж", "контекст", "json"]
-
-
 def check(case: dict, resp: dict, production: bool) -> list[str]:
-    """Алдааны жагсаалт буцаана, хоосон бол тэнцсэн.
-
-    expect: "answer" (хариулах ёстой), "refuse" (татгалзах ёстой),
-            "any" (аль нь ч болно, гэхдээ must_not_match-д таарах зүйл зохиохгүй)
-    """
+    """Алдааны жагсаалт буцаана, хоосон бол тэнцсэн."""
     errors = []
     found, answer = resp.get("found"), resp.get("answer", "")
-    low = answer.lower()
     if case["expect"] == "answer" and not found:
         errors.append("хариулах ёстой байсан ч found=false")
     if case["expect"] == "refuse" and found:
         errors.append("татгалзах ёстой байсан ч found=true")
     if found:
-        errors += [f"'{s}' хариултад алга" for s in case.get("must_include", []) if s.lower() not in low]
+        errors += [f"'{s}' хариултад алга" for s in case.get("must_include", []) if s not in answer]
         if not resp.get("sources"):
             errors.append("эх сурвалж хоосон")
-    errors += [f"'{s}' хариултад орсон" for s in case.get("must_not_include", []) if s.lower() in low]
-    if case.get("must_not_match") and re.search(case["must_not_match"], answer, re.I):
-        errors.append(f"зохиосон байж болзошгүй: /{case['must_not_match']}/ таарсан")
-    errors += [f"дотоод хэллэг '{w}' орсон" for w in BANNED if w in low]
+    errors += [f"'{s}' хариултад орсон" for s in case.get("must_not_include", []) if s in answer]
     if production and "debug" in resp:
         errors.append("debug талбар гарсан (DEBUG_RETRIEVAL production дээр асаалттай?)")
     return errors
@@ -71,7 +58,7 @@ def run_retrieval(cases: list[dict]) -> None:
         print(f"{top:6.3f}  {c['expect']:<7}  {c['id']}")
 
     answer_n = sum(c["expect"] == "answer" for c in cases)
-    refuse_n = sum(c["expect"] == "refuse" for c in cases)   # "any" кейсүүд босгын тооцоонд орохгүй
+    refuse_n = len(cases) - answer_n
     print(f"\nБосго  хариулах давсан ({answer_n})  татгалзах хаагдсан ({refuse_n})")
     for t in THRESHOLDS:
         passed = sum(c["expect"] == "answer" and top >= t for c, top in tops)

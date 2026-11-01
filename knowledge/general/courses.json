@@ -102,7 +102,7 @@
       "id": "recorded-16-week-course",
       "name": null,
       "display_label": "16 долоо хоногийн бичлэгтэй сургалт (албан ёсны нэр тодорхойгүй)",
-      "format": "Бичлэгтэй видео сургалт",
+      "format": "pre_recorded_video",
       "duration_weeks": 16,
       "lesson_count": null,
       "lesson_list": [],
@@ -110,18 +110,18 @@
         "currency": "MNT",
         "single_lesson": {
           "amount_mnt": 1000,
-          "purchase_unit": "1 хичээл"
+          "purchase_unit": "lesson"
         },
         "full_course": {
           "amount_mnt": 10000,
-          "purchase_unit": "16 долоо хоногийн бүтэн сургалт"
+          "purchase_unit": "16_week_course"
         },
         "type": "user_provided_current_snapshot",
         "price_lookup": "backend",
         "price_may_change": true,
         "snapshot_observed": "user-provided snapshot (not guaranteed live)"
       },
-      "access_after_payment": "Төлбөр баталгаажсаны дараа сургалтын бичлэг үзэх эрх нээгдэнэ.",
+      "access_after_payment": "QPay payment verified by main backend and enrolled entitlement checked",
       "access_duration": null,
       "payment_provider": "QPay",
       "published_status": "needs_company_confirmation",
@@ -131,31 +131,6 @@
       "access_duration_days": null,
       "purchasing_live_status": "backend_not_confirmed",
       "source_reference": "Хэрэглэгчийн өгсөн 16 долоо хоногийн бичлэгтэй сургалтын мэдээлэл"
-    },
-    {
-      "id": "vip-course",
-      "name": "VIP цогц сургалт",
-      "description": null,
-      "price_mnt": null,
-      "price_lookup": "backend",
-      "source_reference": "Компанийн үйлчилгээний жагсаалт (services.txt)"
-    },
-    {
-      "id": "data-analysis-power-bi",
-      "name": "Өгөгдлийн шинжилгээ ба Power BI",
-      "description": "Өгөгдлөө цэгцэлж, шинжилгээ хийн, үр дүнгээ ойлгомжтой тайлан болон интерактив самбараар харуулж сурна. Power BI ашиглан мэдээллээ шийдвэр гаргахад хэрэгтэй бодит ойлголт болгох ур чадвар эзэмшинэ.",
-      "level": "Анхан, ахисан түвшин",
-      "price_mnt": null,
-      "price_lookup": "backend",
-      "source_reference": "mci.mn сайтын сургалтын хэсэг"
-    },
-    {
-      "id": "computer-skills",
-      "name": "Компьютерын хэрэглээ",
-      "description": null,
-      "price_mnt": null,
-      "price_lookup": "backend",
-      "source_reference": "Компанийн үйлчилгээний жагсаалт (services.txt)"
     }
   ]
 }

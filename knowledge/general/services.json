@@ -6,25 +6,24 @@
   "visibility": "public",
   "approval_status": "needs_company_review",
   "source_basis": "User-provided system analysis, workshop image and confirmed chat requirements; DOCX not included",
-  "overview": "Magic Code AI гурван чиглэлээр үйл ажиллагаа явуулдаг: вэбсайт хөгжүүлэлт, сургалт, мерч бүтээгдэхүүн.",
   "services": [
     {
       "id": "web-development",
       "name": "Вэбсайт хөгжүүлэлт",
-      "description": "Бизнес, байгууллагын вебсайт хөгжүүлэлт. Танилцуулга сайт, бизнес вебсайт, онлайн дэлгүүр гэсэн 3 багцтай. Хүсэлтийг вебсайтын маягтаар хүлээн авна.",
+      "description": "Бизнес, байгууллагын веб хөгжүүлэлтийн үйлчилгээний хүсэлтийг онлайн маягтаар хүлээн авах боломжийг төлөвлөсөн.",
       "request_channel": "website_inquiry_form",
       "required_information": [
         "Нэр",
         "Холбоо барих мэдээлэл",
         "Төслийн товч тайлбар"
       ],
-      "price_type": "package_range",
+      "price_type": "individual_quote",
+      "price_mnt": null,
       "availability": "confirm_via_backend_or_company",
       "public_facts_confirmed": [
         "Веб хөгжүүлэлтийн үйлчилгээ санал болгоно",
         "Хүсэлтийг form-оор авна"
-      ],
-      "pricing": "Танилцуулга сайт 500,000₮ – 1,200,000₮; Бизнес вебсайт 2,000,000₮ – 5,000,000₮; Онлайн дэлгүүр 5,000,000₮ – 15,000,000₮."
+      ]
     },
     {
       "id": "training",
@@ -40,5 +39,5 @@
       "availability": "confirm_via_backend"
     }
   ],
-  "note": "Ажил эхлэх хугацаа, эцсийн үнийн саналын нөхцөлийг тогтоогоогүй; төслийн шаардлагаас хамаарна."
+  "note": "Веб хөгжүүлэлтийн төрөл, үнэ, ажил эхлэх хугацаа, саналын нөхцөлийг эх сурвалжид тогтоогоогүй."
 }

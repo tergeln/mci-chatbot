@@ -17,9 +17,8 @@ def require(name: str) -> str:
 EMBED_MODEL = "gemini-embedding-001"   # ingest-тэй яг ижил байх ёстой
 EMBED_DIMS = 1536
 
-# Хариулт үүсгэх: Claude (ANTHROPIC_API_KEY). Embedding нь Gemini хэвээр.
-GEN_MODEL = os.getenv("GEN_MODEL", "claude-haiku-5-5")
-GEN_FALLBACK_MODEL = os.getenv("GEN_FALLBACK_MODEL", "")   # жишээ нь claude-sonnet-5-5
+GEN_MODEL = os.getenv("GEN_MODEL", "gemini-3.5-flash-lite")
+GEN_FALLBACK_MODEL = os.getenv("GEN_FALLBACK_MODEL", "gemini-3.8-flash")
 MIN_SIMILARITY = float(os.getenv("MIN_SIMILARITY", "0.60"))
 TOP_K = int(os.getenv("TOP_K", "6"))
 DEBUG_RETRIEVAL = os.getenv("DEBUG_RETRIEVAL") == "1"

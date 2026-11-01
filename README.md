@@ -2,7 +2,7 @@
 
 Magic Code AI-ийн (www.mci.mn) онлайн сургалт, вебсайт хөгжүүлэлт, мерчийн RAG чатбот "Magi".
 
-Stack: Python, FastAPI, Claude Haiku 5.5 (хариулт), Gemini (embedding), Supabase pgvector, React.
+Stack: Python, FastAPI, Gemini, Supabase pgvector, React.
 
 ## Бүтэц
 - `api/`: чатын API (FastAPI, Vercel дээр Root Directory = `api`)
@@ -50,9 +50,11 @@ api/.venv/bin/python evals/run_evals.py --url https://magiccode-chatbot.vercel.a
 
 ## Deploy (Vercel)
 - Root Directory: `api`
-- Заавал: `ANTHROPIC_API_KEY`, `GEMINI_API_KEY` (embedding), `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`
+- Заавал: `GEMINI_API_KEY`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`
 - `ALLOWED_ORIGINS=https://www.mci.mn,https://mci.mn`, `CONTACT_TEXT`, `RATE_LIMIT_SALT`
 - `DEBUG_RETRIEVAL`-ийг production дээр тохируулахгүй
 - Deployment Protection (Vercel Authentication) унтраалттай байх ёстой
 - Сайт талд: `VITE_CHAT_API_URL=<API хаяг>`
 
+## Мэдэгдэж буй дутагдал
+Supabase-ийн схем (`kb_sources`, `kb_chunks`, `kb_match_chunks`, `kb_rate_limit_hit`) repo-д ороогүй. Шинэ Supabase дээр суулгахын тулд одоогийн сангаас SQL-ийг экспортлон `sql/` руу нэмэх шаардлагатай.

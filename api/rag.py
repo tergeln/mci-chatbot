@@ -3,7 +3,6 @@ import re
 import time
 from functools import lru_cache
 
-import anthropic
 from google import genai
 from google.genai import types
 from pydantic import BaseModel
@@ -16,14 +15,7 @@ log = logging.getLogger("chatbot")
 
 @lru_cache
 def gemini():
-    """Зөвхөн embedding-д (ingest-тэй ижил вектор байх ёстой)."""
     return genai.Client(api_key=config.require("GEMINI_API_KEY"))
-
-
-@lru_cache
-def claude():
-    """Хариулт үүсгэх. SDK нь 429/5xx/холболтын алдааг өөрөө давтан оролддог."""
-    return anthropic.Anthropic(api_key=config.require("ANTHROPIC_API_KEY"), timeout=30.0)
 
 
 @lru_cache
@@ -126,30 +118,25 @@ def build_prompt(question: str, history: list, chunks: list[dict]) -> str:
     )
 
 
+TRANSIENT = ("429", "500", "503", "UNAVAILABLE", "RESOURCE_EXHAUSTED", "DEADLINE")
+
+
+def _is_transient(error: Exception) -> bool:
+    return any(key in str(error) for key in TRANSIENT)
+
+
 def _generate_once(model: str, prompt: str) -> LLMAnswer | None:
-    res = claude().messages.parse(
+    res = gemini().models.generate_content(
         model=model,
-        max_tokens=2048,
-        system=SYSTEM_PROMPT,
-        thinking={"type": "disabled"},   # бэлэн хэсгээс хариулах ажил, хурд чухал
-        messages=[{"role": "user", "content": prompt}],
-        output_format=LLMAnswer,
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            system_instruction=SYSTEM_PROMPT,
+            temperature=0.1,
+            response_mime_type="application/json",
+            response_schema=LLMAnswer,
+        ),
     )
-    if res.stop_reason == "refusal":     # аюулгүй байдлын шүүлтүүр татгалзсан → "мэдээлэл алга"
-        log.warning("%s татгалзсан: %s", model, res.stop_details)
-        return None
-    return res.parsed_output if isinstance(res.parsed_output, LLMAnswer) else None
-
-
-# Түр алдаа: SDK өөрөө 2 удаа давтсаны дараа ч үлдвэл нөөц загвар руу шилжинэ
-TRANSIENT = (
-    anthropic.APIConnectionError,        # APITimeoutError-ийг агуулна
-    anthropic.RateLimitError,            # 429
-    anthropic.InternalServerError,       # 500
-    anthropic.ServiceUnavailableError,   # 503
-    anthropic.DeadlineExceededError,     # 504
-    anthropic.OverloadedError,           # 529
-)
+    return res.parsed if isinstance(res.parsed, LLMAnswer) else None
 
 
 def generate(prompt: str) -> LLMAnswer | None:
@@ -159,11 +146,15 @@ def generate(prompt: str) -> LLMAnswer | None:
 
     last_error: Exception | None = None
     for model in models:
-        try:
-            return _generate_once(model, prompt)
-        except TRANSIENT as e:
-            last_error = e
-            log.warning("%s түр алдаа: %s", model, str(e)[:200])
+        for attempt in range(2):
+            try:
+                return _generate_once(model, prompt)
+            except Exception as e:
+                last_error = e
+                log.warning("%s алдаа (оролдлого %d): %s", model, attempt + 1, str(e)[:200])
+                if not _is_transient(e):
+                    break                       # энэ загвар ажиллахгүй, дараагийнх руу
+                time.sleep(1.5 * (attempt + 1))  # түр алдаа бол хүлээгээд дахин
 
     raise last_error
 
