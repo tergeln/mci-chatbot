@@ -8,6 +8,7 @@ api/.venv-ийг идэвхжүүлээд root-оос:
 """
 import argparse
 import json
+import re
 import sys
 import time
 from pathlib import Path
@@ -41,6 +42,10 @@ def check(case: dict, resp: dict, production: bool) -> list[str]:
         if not resp.get("sources"):
             errors.append("эх сурвалж хоосон")
     errors += [f"'{s}' хариултад орсон" for s in case.get("must_not_include", []) if s in answer]
+    if case.get("lang") == "en":
+        followups = " ".join(resp.get("followups", []))
+        if re.search(r"[А-Яа-яЁёӨөҮү]", answer + followups):
+            errors.append("англи хариултад кирилл үсэг орсон")
     if production and "debug" in resp:
         errors.append("debug талбар гарсан (DEBUG_RETRIEVAL production дээр асаалттай?)")
     return errors
@@ -84,6 +89,7 @@ def run_full(cases: list[dict], url: str | None, delay: float) -> int:
                 "message": c["question"],
                 "history": c.get("history", []),
                 **({"business": c["business"]} if c.get("business") else {}),
+                "lang": c.get("lang", "mn"),
             })
             if r.status_code != 200:
                 failed += 1
@@ -91,7 +97,7 @@ def run_full(cases: list[dict], url: str | None, delay: float) -> int:
                 continue
             resp = r.json()
         else:
-            resp = rag.answer_question(c["question"], history_of(c), c.get("business"))
+            resp = rag.answer_question(c["question"], history_of(c), c.get("business"), c.get("lang", "mn"))
 
         errors = check(c, resp, production=bool(url))
         failed += bool(errors)

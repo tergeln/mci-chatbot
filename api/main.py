@@ -31,6 +31,7 @@ class ChatRequest(BaseModel):
     message: str = Field(min_length=1, max_length=500)
     history: list[Message] = Field(default_factory=list, max_length=6)
     business: Literal["course", "web", "merch"] | None = None
+    lang: Literal["mn", "en"] = "mn"
 
 
 @app.get("/")
@@ -51,7 +52,7 @@ def chat(req: ChatRequest, request: Request):
     if not question:
         raise HTTPException(status_code=422, detail="Асуулт хоосон байна")
     try:
-        return rag.answer_question(question, req.history, req.business)
+        return rag.answer_question(question, req.history, req.business, req.lang)
     except Exception:
         log.exception("chat алдаа")
         raise HTTPException(

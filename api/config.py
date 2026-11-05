@@ -23,6 +23,7 @@ MIN_SIMILARITY = float(os.getenv("MIN_SIMILARITY", "0.60"))
 TOP_K = int(os.getenv("TOP_K", "6"))
 DEBUG_RETRIEVAL = os.getenv("DEBUG_RETRIEVAL") == "1"
 CONTACT_TEXT = os.getenv("CONTACT_TEXT", "").strip()
+CONTACT_TEXT_EN = os.getenv("CONTACT_TEXT_EN", "").strip() or "For details, please contact magiccodeai@gmail.com."
 
 ALLOWED_ORIGINS = [
     o.strip()
